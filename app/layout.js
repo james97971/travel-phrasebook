@@ -1,6 +1,4 @@
-// app/layout.js
 import "./globals.css";
-import Script from "next/script";
 
 export const metadata = {
   title: "Travel Phrasebook",
@@ -11,14 +9,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ AdSense: Next Script로 afterInteractive 로드 (권장) */}
-        <Script
-          id="adsense-init"
+        {/* ✅ Google AdSense 코드 — 반드시 이렇게 정적 삽입 */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7721829567022661"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        ></script>
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900">
         {children}
