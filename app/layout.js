@@ -1,17 +1,20 @@
-// app/layout.js
-import "./globals.css";
-
 export const metadata = {
-  title: "Light Travel 100",
-  description: "가벼운 여행을 위한 필수 100문장",
+  title: "Travel Phrasebook",
+  description: "Essential travel phrases for global travelers",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-50 text-slate-900">
-        {children}
-      </body>
+      <head>
+        {/* ✅ Google AdSense 삽입 */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7721829567022661"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
