@@ -1,22 +1,26 @@
+// app/layout.js
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata = {
   title: "Travel Phrasebook",
-  description: "Essential travel phrases for global travelers",
+  description: "100 essential travel phrases per destination",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Google AdSense 코드 — 반드시 이렇게 정적 삽입 */}
-        <script
+        {/* AdSense: 페이지 전체에서 로드 (이미 쓰고 있던 값 유지) */}
+        <Script
+          id="adsbygoogle-init"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7721829567022661"
           crossOrigin="anonymous"
-        ></script>
+          strategy="afterInteractive"
+        />
       </head>
-      <body className="min-h-screen bg-slate-50 text-slate-900">
+      <body className="bg-slate-50 text-slate-900">
         {children}
       </body>
     </html>
