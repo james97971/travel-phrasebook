@@ -2,6 +2,7 @@
 
 import { use, useMemo, useState } from "react";
 import { getPhrases } from "@/lib/phrases";
+import Script from "next/script";
 
 function speak(text, lang) {
   try {
@@ -40,8 +41,16 @@ export default function CategoryPage({ params }) {
   );
 
   return (
+    
     <main className="mx-auto max-w-6xl px-4 py-8">
       {/* 빵크럼 */}
+       <Script
+        id="adsbygoogle-init-dest"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7721829567022661"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <div className="flex gap-4 text-sm">
         <a href="/" className="underline">← Home</a>
         <a href={`/${ui}/${dest}`} className="underline">← Categories</a>

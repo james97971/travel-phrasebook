@@ -2,6 +2,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 
 const LOCALES = [
   { code: "ko", label: "한국어", flag: "🇰🇷" },
@@ -152,6 +153,16 @@ export default function Main() {
   const t = useMemo(() => UIL10N[ui] || UIL10N.en, [ui]);
 
   return (
+      <>
+      {/* ✅ 메인 페이지만 광고 로드 */}
+      <Script
+        id="adsbygoogle-init-main"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7721829567022661"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
+
     <div className="min-h-[100dvh] bg-gradient-to-b from-sky-100 via-blue-50 to-indigo-100">
       {/* 상단 헤더 – 기존 디자인 그대로 */}
       <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b">
@@ -213,6 +224,6 @@ export default function Main() {
         </footer>
 
     </div>
-    
+    </>
   );
 }
