@@ -154,14 +154,7 @@ export default function Main() {
 
   return (
       <>
-      {/* ✅ 메인 페이지만 광고 로드 */}
-      <Script
-        id="adsbygoogle-init-main"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7721829567022661"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
+
 
     <div className="min-h-[100dvh] bg-gradient-to-b from-sky-100 via-blue-50 to-indigo-100">
       {/* 상단 헤더 – 기존 디자인 그대로 */}
